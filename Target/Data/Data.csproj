@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Contractors\IUserName.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\202205191839286_user.cs" />
     <Compile Include="Migrations\202205191839286_user.designer.cs">
