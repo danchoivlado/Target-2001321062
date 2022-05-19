@@ -13,7 +13,7 @@ namespace Repository.Implementations
         private DataContext context = new DataContext();
         private GenericRepository<User> userRepository;
 
-        public GenericRepository<User> DepartmentRepository
+        public GenericRepository<User> UserRepository
         {
             get
             {
