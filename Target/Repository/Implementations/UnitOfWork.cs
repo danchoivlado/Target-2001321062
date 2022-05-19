@@ -11,16 +11,16 @@ namespace Repository.Implementations
     public class UnitOfWork : IDisposable
     {
         private DataContext context = new DataContext();
-        private GenericRepository<User> userRepository;
+        private UserRepository<User> userRepository;
 
-        public GenericRepository<User> UserRepository
+        public UserRepository<User> UserRepository
         {
             get
             {
 
                 if (this.userRepository == null)
                 {
-                    this.userRepository = new GenericRepository<User>(context);
+                    this.userRepository = new UserRepository<User>(context);
                 }
                 return userRepository;
             }

@@ -54,12 +54,27 @@ namespace ApplicationService.Implementaions
             return nationalityDTO;
         }
 
+        public bool Login(UserDTO userDto)
+        {
+            using (UnitOfWork unitOfWork = new UnitOfWork())
+            {
+                User user = unitOfWork.UserRepository.GetByUserName(userDto.UserName);
+                if (user == null || !BCrypt.Net.BCrypt.Verify(userDto.Password, user.Password))
+                {
+                    return false;
+                }
+
+                return true;
+            }
+
+        }
+
         public bool Save(UserDTO nationalityDTO)
         {
             User nationality = new User()
             {
                 UserName = nationalityDTO.UserName,
-                Password = nationalityDTO.Password
+                Password = BCrypt.Net.BCrypt.HashPassword(nationalityDTO.Password)
             };
 
             try
