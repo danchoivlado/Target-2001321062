@@ -39,14 +39,14 @@ namespace ApplicationService.Implementaions
 
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                User nationality = unitOfWork.UserRepository.GetByID(id);
-                if (nationality != null)
+                User user = unitOfWork.UserRepository.GetByID(id);
+                if (user != null)
                 {
                     nationalityDTO = new UserDTO
                     {
-                        Id = nationality.Id,
-                        UserName = nationality.UserName,
-                        Password = nationality.Password
+                        Id = user.Id,
+                        UserName = user.UserName,
+                        Password = user.Password
                     };
                 }
             }
@@ -54,7 +54,7 @@ namespace ApplicationService.Implementaions
             return nationalityDTO;
         }
 
-        public bool Login(UserDTO userDto)
+        public bool Login(UserLoginDTO userDto)
         {
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
