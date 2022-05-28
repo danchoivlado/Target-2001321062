@@ -71,7 +71,7 @@ namespace ApplicationService.Implementaions
 
         public bool Save(UserDTO nationalityDTO)
         {
-            User nationality = new User()
+            User user = new User()
             {
                 UserName = nationalityDTO.UserName,
                 Password = BCrypt.Net.BCrypt.HashPassword(nationalityDTO.Password)
@@ -81,7 +81,7 @@ namespace ApplicationService.Implementaions
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    unitOfWork.UserRepository.Insert(nationality);
+                    unitOfWork.UserRepository.Insert(user);
                     unitOfWork.Save();
                 }
                 return true;
