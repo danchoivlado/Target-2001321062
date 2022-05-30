@@ -63,5 +63,27 @@ namespace MVC.Controllers
 
             return RedirectToAction("index");
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var user = userManagementService.GetById(id);
+
+            return View(new UserEditViewModel(user));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(UserEditViewModel model)
+        {
+            UserDTO userDto = new UserDTO();
+
+            userDto.Id = model.Id;
+            userDto.UserName = model.UserName;
+            userDto.Password = model.Password;
+
+            userManagementService.Update(userDto);
+
+            return RedirectToAction("index");
+        }
     }
 }
