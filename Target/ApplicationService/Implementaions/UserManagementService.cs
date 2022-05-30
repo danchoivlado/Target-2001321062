@@ -110,5 +110,29 @@ namespace ApplicationService.Implementaions
                 return false;
             }
         }
+
+        public bool Update(UserDTO userDto)
+        {
+            User user = new User()
+            {
+                Id = userDto.Id,
+                UserName = userDto.UserName,
+                Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password)
+            };
+
+            try
+            {
+                using (UnitOfWork unitOfWork = new UnitOfWork())
+                {
+                    unitOfWork.UserRepository.Update(user);
+                    unitOfWork.Save();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
