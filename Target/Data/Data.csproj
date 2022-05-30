@@ -54,10 +54,15 @@
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Contractors\IUserName.cs" />
+    <Compile Include="Entities\Flower.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\202205191839286_user.cs" />
     <Compile Include="Migrations\202205191839286_user.designer.cs">
       <DependentUpon>202205191839286_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205301947460_flower.cs" />
+    <Compile Include="Migrations\202205301947460_flower.designer.cs">
+      <DependentUpon>202205301947460_flower.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205191839286_user.resx">
       <DependentUpon>202205191839286_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205301947460_flower.resx">
+      <DependentUpon>202205301947460_flower.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
