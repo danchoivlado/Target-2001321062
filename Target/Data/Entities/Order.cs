@@ -8,7 +8,7 @@ namespace Data.Entities
 {
     public class Order : BaseEntity
     {
-        public Nullable<int> UserID { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
     }
 }
