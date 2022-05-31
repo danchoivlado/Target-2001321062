@@ -24,6 +24,7 @@ namespace MVC.Controllers
         public IActionResult Create()
         {
             return View(new FlowersCreateViewModel());
+            
         }
 
         [HttpPost]
