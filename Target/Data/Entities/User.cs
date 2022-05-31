@@ -11,13 +11,13 @@ namespace Data.Entities
     {
         public User()
         {
-            this.Users = new HashSet<User>();
+            this.Orders = new HashSet<Order>();
         } 
 
         public string UserName { get; set; }
 
         public string Password { get; set; }
        
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
