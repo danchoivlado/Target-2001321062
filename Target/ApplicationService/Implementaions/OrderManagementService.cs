@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationService.Implementaions
 {
-    internal class OrderManagementService
+    public class OrderManagementService
     {
         public List<OrderDTO> Get()
         {
@@ -20,12 +20,11 @@ namespace ApplicationService.Implementaions
                 foreach (var item in unitOfWork.OrderRepository.Get())
                 {
 
-                    ordersDto.Add(new OrderDTO
-                    {
-                        Id = item.Id,
-                        UserId = item.UserId,
-                    });
-
+                    OrderDTO dto = new OrderDTO();
+                    dto.UserId = item.UserId;
+                    dto.Id = item.Id;
+                    AddMissing(dto, item);
+                    ordersDto.Add(dto);
                 }
             }
             return ordersDto;
@@ -38,16 +37,30 @@ namespace ApplicationService.Implementaions
             {
                 Order order = unitOfWork.OrderRepository.GetByID(id);
                 if (order != null)
-                {ordersDTO = new OrderDTO
                 {
+                    ordersDTO = new OrderDTO
+                    {
                         Id = order.Id,
                         UserId = order.UserId,
-                };
+                    };
+                    AddMissing(ordersDTO, order);
                 }
             }
 
             return ordersDTO;
         }
+
+        private static void AddMissing(OrderDTO ordersDTO, Order order)
+        {
+            if (order.User != null)
+            {
+                UserDTO usersDTO = new UserDTO();
+                usersDTO.Id = order.User.Id;
+                usersDTO.UserName = order.User.UserName;
+                ordersDTO.User = usersDTO;
+            }
+        }
+
         public bool Save(OrderDTO ordersDTO)
         {
             Order order = new Order()
@@ -92,7 +105,7 @@ namespace ApplicationService.Implementaions
             Order order = new Order()
             {
                 Id = orderDto.Id,
-                UserId=orderDto.UserId,
+                UserId = orderDto.UserId,
             };
 
             try

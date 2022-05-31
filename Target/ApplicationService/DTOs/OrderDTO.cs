@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ApplicationService.DTOs
 {
-    internal class OrderDTO
+    public class OrderDTO
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public virtual UserDTO User { get; set; }
     }
 }

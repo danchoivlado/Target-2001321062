@@ -17,7 +17,6 @@ namespace MVC.Controllers
                 flowersVM.Add(new FlowerIndexViewModel(flower));
             }
 
-
             return View(flowersVM);
         }
         [HttpGet]

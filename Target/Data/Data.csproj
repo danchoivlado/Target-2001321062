@@ -57,17 +57,9 @@
     <Compile Include="Entities\Flower.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Migrations\202205191839286_user.cs" />
-    <Compile Include="Migrations\202205191839286_user.designer.cs">
-      <DependentUpon>202205191839286_user.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205301947460_flower.cs" />
-    <Compile Include="Migrations\202205301947460_flower.designer.cs">
-      <DependentUpon>202205301947460_flower.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205311214523_Orders.cs" />
-    <Compile Include="Migrations\202205311214523_Orders.designer.cs">
-      <DependentUpon>202205311214523_Orders.cs</DependentUpon>
+    <Compile Include="Migrations\202205311551208_Initial.cs" />
+    <Compile Include="Migrations\202205311551208_Initial.designer.cs">
+      <DependentUpon>202205311551208_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,14 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205191839286_user.resx">
-      <DependentUpon>202205191839286_user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205301947460_flower.resx">
-      <DependentUpon>202205301947460_flower.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205311214523_Orders.resx">
-      <DependentUpon>202205311214523_Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205311551208_Initial.resx">
+      <DependentUpon>202205311551208_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
