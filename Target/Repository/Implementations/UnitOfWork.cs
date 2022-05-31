@@ -13,6 +13,7 @@ namespace Repository.Implementations
         private DataContext context = new DataContext();
         private UserRepository<User> userRepository;
         private FlowerRepository<Flower> flowerRepository;
+        private OrderRepository<Order> orderRepository; 
 
         public UserRepository<User> UserRepository
         {
@@ -31,12 +32,22 @@ namespace Repository.Implementations
         {
             get
             {
-
                 if (this.flowerRepository == null)
                 {
                     this.flowerRepository = new FlowerRepository<Flower>(context);
                 }
                 return flowerRepository;
+            }
+        }
+        public OrderRepository<Order> OrderRepository
+        {
+            get
+            {
+                if (this.orderRepository == null)
+                {
+                    this.orderRepository = new OrderRepository<Order>(context);
+                }
+                return orderRepository;
             }
         }
 
