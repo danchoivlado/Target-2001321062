@@ -1,4 +1,5 @@
 ﻿using Data.Entities;
+using Data.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,5 +13,6 @@ namespace Data.Context
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Flower> Flowers { get; set; }
+        public DbSet<Orders> Orders { get; set; }
     }
 }
