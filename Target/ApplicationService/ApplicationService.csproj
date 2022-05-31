@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\FlowerDTO.cs" />
+    <Compile Include="DTOs\OrderDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="DTOs\UserLoginDTO.cs" />
     <Compile Include="Implementaions\FlowerManagementService.cs" />
+    <Compile Include="Implementaions\OrderManagementService.cs" />
     <Compile Include="Implementaions\UserManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
