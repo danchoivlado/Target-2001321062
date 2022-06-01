@@ -62,6 +62,11 @@ namespace ApplicationService.Implementaions
                 orderDTO.UserId = orderItem.Order.UserId;
                 orderItemDTO.Order = orderDTO;
             }
+            if (orderItem.Order.User != null)
+            {
+                UserDTO userDTO = new UserDTO();
+                orderItem.Order.User = userDTO;
+            }
             if (orderItem.Flower != null)
             {
                 FlowerDTO flowerDTO = new FlowerDTO();
