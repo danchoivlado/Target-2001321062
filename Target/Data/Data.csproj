@@ -56,6 +56,7 @@
     <Compile Include="Entities\Contractors\IUserName.cs" />
     <Compile Include="Entities\Flower.cs" />
     <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\202205311551208_Initial.cs" />
     <Compile Include="Migrations\202205311551208_Initial.designer.cs">
