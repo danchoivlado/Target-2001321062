@@ -12,5 +12,17 @@ namespace ApplicationService.DTOs
         public int Id { get; set; }
         public int UserId { get; set; }
         public virtual UserDTO User { get; set; }
+        public virtual List<OrderItemDTO> Items { get; set; }
+
+        public OrderDTO()
+        {
+
+        }
+
+        public OrderDTO(Order order)
+        {
+            this.Id = order.Id;
+            this.UserId = order.UserId;
+        }
     }
 }

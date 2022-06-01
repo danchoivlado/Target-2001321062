@@ -59,9 +59,19 @@ namespace ApplicationService.Implementaions
                 usersDTO.UserName = order.User.UserName;
                 ordersDTO.User = usersDTO;
             }
+
+            if (order.OrderItems != null)
+            {
+                List<OrderItemDTO> ordeItems = new List<OrderItemDTO>();
+                foreach (var item in order.OrderItems)
+                {
+                    ordeItems.Add(new OrderItemDTO(item));
+                }
+                ordersDTO.Items = ordeItems;
+            }
         }
 
-        public bool Save(OrderDTO ordersDTO)
+        public int Save(OrderDTO ordersDTO)
         {
             Order order = new Order()
             {
@@ -72,14 +82,15 @@ namespace ApplicationService.Implementaions
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    unitOfWork.OrderRepository.Insert(order);
+                    var createdOrder = unitOfWork.OrderRepository.Insert(order);
                     unitOfWork.Save();
+                    return createdOrder.Id;
                 }
-                return true;
+
             }
             catch
             {
-                return false;
+                return 0;
             }
         }
         public bool Delete(int id)
