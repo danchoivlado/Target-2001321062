@@ -77,7 +77,7 @@ namespace ApplicationService.Implementaions
             OrderItem orderItem = new OrderItem()
             {
                 OrderId = orderItemsDTO.OrderId,
-                FlowerId = orderItemsDTO.Flower.Id,
+                FlowerId = orderItemsDTO.FlowerId,
                 Quantity = orderItemsDTO.Quantity,
             };
 
