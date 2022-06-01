@@ -1,5 +1,4 @@
 ﻿using Data.Entities;
-using Data.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
