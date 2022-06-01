@@ -13,7 +13,8 @@ namespace Repository.Implementations
         private DataContext context = new DataContext();
         private UserRepository<User> userRepository;
         private FlowerRepository<Flower> flowerRepository;
-        private OrderRepository<Order> orderRepository; 
+        private OrderRepository<Order> orderRepository;
+        private OrderItemRepository<OrderItem> orderItemRepository;
 
         public UserRepository<User> UserRepository
         {
@@ -48,6 +49,17 @@ namespace Repository.Implementations
                     this.orderRepository = new OrderRepository<Order>(context);
                 }
                 return orderRepository;
+            }
+        }
+        public OrderItemRepository<OrderItem> OrderItemRepository
+        {
+            get
+            {
+                if (this.orderItemRepository == null)
+                {
+                    this.orderItemRepository = new OrderItemRepository<OrderItem>(context);
+                }
+                return orderItemRepository;
             }
         }
 
